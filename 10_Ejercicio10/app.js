@@ -21,4 +21,3 @@ const NumerosIguales = (arr) => {
 
 NumerosIguales(numeros);
 NumerosIguales(numeros2);
-con 
