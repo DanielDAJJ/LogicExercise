@@ -85,7 +85,8 @@ NumberIndex(numeros);
 
 //*“Agrupar palabras por su primera letra”
 
-const palabras = ["gato", "gallina", "perro", "pez", "pato", "ratón"];
+const animales = ["gato", "gallina", "perro", "pez", "pato", "ratón"];
+const objetos = ["cuchara", "cucharon", "tenedor", "espatula", "tetera", "exprimidor", "cazuela"];
 
 const Dictionary = (arr) => {
     const charReference = {};
@@ -97,4 +98,38 @@ const Dictionary = (arr) => {
     return console.log(charReference)
 };
 
-Dictionary(palabras);
+Dictionary(animales);
+Dictionary(objetos);
+
+/* 
+*Agrupación por Longitud de Palabra
+
+Instrucciones:
+Dado un array de palabras, crea una función que agrupe las palabras por su longitud. El resultado debe ser un objeto donde cada clave representa una longitud, y su valor un array con todas las palabras que tienen esa longitud.
+
+?Entrada
+const palabras = ["sol", "gato", "luz", "mar", "perro", "pez", "cielo"];
+?Salida
+{
+    3: ["sol", "luz", "mar", "pez"],
+    4: ["gato"],
+    5: ["perro"],
+    6: ["cielo"]
+    }
+*/
+
+const palabras = ["sol", "gato", "luz", "mar", "perro", "pez", "cielo"];
+
+const LengthWordAgrupation = (arr) => {
+    const lengthWord = {};
+
+    arr.forEach(word =>{
+        let large = word.length;
+
+        !lengthWord[large] ? lengthWord[large] = [word] : lengthWord[large].push(word);
+    })
+
+    return console.log(lengthWord)
+};
+
+LengthWordAgrupation(palabras);
